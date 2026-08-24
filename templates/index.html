@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Interview Helper</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 14px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #555;
+        }
+
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f8f8;
+            border-radius: 10px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🤖 AI Interview Helper</h1>
+
+    <form method="POST">
+
+        <label>Job Role</label>
+        <input
+            type="text"
+            name="role"
+            placeholder="Example: Python Developer"
+            required
+        >
+
+        <label>Experience Level</label>
+        <select name="experience" required>
+            <option value="">Select experience level</option>
+            <option value="Fresher">Fresher</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Experienced">Experienced</option>
+        </select>
+
+        <label>Skills</label>
+        <textarea
+            name="skills"
+            placeholder="Example: Python, SQL, Machine Learning"
+            required
+        ></textarea>
+
+        <label>Interview Type</label>
+        <select name="interview_type" required>
+            <option value="">Select interview type</option>
+            <option value="Technical">Technical</option>
+            <option value="HR">HR</option>
+            <option value="Technical and HR">Technical + HR</option>
+        </select>
+
+        <button type="submit">
+            Generate Interview Preparation
+        </button>
+
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <h2>📋 Your Interview Preparation</h2>
+        {{ result }}
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
